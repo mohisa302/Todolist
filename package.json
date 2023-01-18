@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --mode production",
     "dev": "webpack --mode development",
-    "start": "webpack serve --open 'Chrome'",
-    "build": "webpack --mode production"
+    "start": "webpack serve --open 'Chrome'"
   },
   "keywords": [],
   "author": "",
@@ -15,8 +14,12 @@
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^9.1.2",
     "css-loader": "^6.7.3",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.27.5",
     "html-webpack-plugin": "^5.5.0",
     "sass": "^1.57.1",
     "sass-loader": "^13.2.0",
