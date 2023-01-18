@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack",
     "dev": "webpack --mode development",
-    "start": "webpack serve --open 'Chrome'"
+    "start": "webpack serve --open 'Chrome'",
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "",
