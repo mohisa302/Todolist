@@ -58,7 +58,7 @@ select:focus {
   width: 80vw;
   flex-direction: column;
   background-color: white;
-  box-shadow: 5px 5px 5px 5px #888888;
+  box-shadow: 5px 5px 5px 5px #888;
 }
 
 .form-container > * {
@@ -79,7 +79,7 @@ ul li input[type='checkbox']:checked ~ del {
   padding-top: 1%;
 }
 
-.form-container > .complete-btn {
+.form-container:last-child {
   margin: 0;
 }
 
@@ -87,7 +87,8 @@ ul li input[type='checkbox']:checked ~ del {
   border: none;
   height: 8vh;
   background-color: rgb(224, 220, 212);
-  color: #888888;
+  color: #888;
+  margin: 0;
 }
 
 .list-container > .ul {
