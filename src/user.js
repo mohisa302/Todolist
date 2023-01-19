@@ -12,14 +12,14 @@ const addTask = (task) => {
       {
         description: task,
         completed: false,
-        index: 0,
+        index: 1,
       },
     ];
   } else {
     listData.push({
       description: task,
       completed: false,
-      index: listData.length,
+      index: listData.length + 1,
     });
   }
   localStorage.setItem('tasks', JSON.stringify(listData));
@@ -44,7 +44,7 @@ clearCom.addEventListener('click', () => {
     listData = listData.filter((task) => !task.completed);
   }
   listData.forEach((taskDay, indexDay) => {
-    taskDay.index = indexDay;
+    taskDay.index = indexDay + 1;
   });
   localStorage.setItem('tasks', JSON.stringify(listData));
   display();
