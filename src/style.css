@@ -76,7 +76,7 @@ select:focus {
   margin: 5%;
   flex-direction: column;
   background-color: white;
-  box-shadow: 5px 5px 5px 5px #888;
+  box-shadow: 5px 5px 5px 5px rgb(124, 124, 124);
 }
 
 .form-container > * {
