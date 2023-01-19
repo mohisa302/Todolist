@@ -23,7 +23,7 @@ listData.forEach((task) => {
   const { description, index } = task;
   list.innerHTML += `
   <li class="task">
-  <input type="checkbox" id="${index}" name="task"/><del>${description}</del>
+  <input type="checkbox" id="${index}" class="check-box" name="task"/><del>${description}</del>
   </li>
   <hr class="list-line"/>
   `;

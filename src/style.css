@@ -4,14 +4,23 @@ html {
 
 html,
 body {
+  --lightGrey: rgb(244, 244, 244);
+  --white: rgb(255, 255, 255);
+  --darkGrey: rgb(36, 36, 36);
+  --black: rgb(19, 19, 19);
+  --ligthGray: rgb(147, 141, 141);
+  --crame: rgb(240, 240, 238);
+
   width: 100%;
   height: 100%;
   padding: 0;
   margin: 0;
+  font-size: medium;
 }
 
 .list-title {
-  color: black;
+  color: var(--black);
+  font-size: medium;
 }
 
 ul {
@@ -25,7 +34,7 @@ ul li del {
 
 .do-list {
   display: flex;
-  background-color: rgb(240, 240, 238);
+  background-color: var(--crame);
   width: 100%;
   height: 100%;
   align-items: center;
@@ -50,6 +59,20 @@ select:focus {
   background-color: white;
 }
 
+.form-container > * {
+  margin: 2%;
+}
+
 ul li input[type='checkbox']:checked ~ del {
   text-decoration: line-through;
+}
+
+li > .form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.check-box {
+  margin-right: 1%;
+  padding-top: 1%;
 }
