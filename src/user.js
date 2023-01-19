@@ -1,12 +1,12 @@
-import { listData } from './tasks';
-import { display } from './ui';
+import listData from './tasks.js';
+import display from './ui.js';
 
 const refreshIcon = document.querySelector('.refresh');
 const addBtn = document.querySelector('.add-btn');
 const newTask = document.querySelector('.list-input');
 const clearCom = document.querySelector('.complete-btn');
 
-export const addTask = (task) => {
+const addTask = (task) => {
   if (!listData) {
     listData = [
       {
@@ -47,3 +47,5 @@ clearCom.addEventListener('click', () => {
   localStorage.setItem('tasks', JSON.stringify(listData));
   display();
 });
+
+export default addTask;

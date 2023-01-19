@@ -7,7 +7,8 @@
     "dev": "webpack --mode development",
     "start": "webpack serve --open 'Chrome'",
     "build": "webpack --mode production"
-  },
+  }
+  ,
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -23,8 +24,9 @@
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1"
-  },
+  }
+  ,
   "dependencies": {
-    "lodash": "^4.17.21"
+
   }
 }

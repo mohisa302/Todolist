@@ -1,6 +1,6 @@
-import { listData } from './tasks';
+import listData from './tasks.js';
 
-export const display = () => {
+const display = () => {
   const list = document.querySelector('.list-container');
   list.innerHTML = '';
   if (listData.length > 0) {
@@ -42,7 +42,7 @@ export const display = () => {
             listData[index].description = inputText.textContent;
             localStorage.setItem('tasks', JSON.stringify(listData));
           },
-          false
+          false,
         );
       });
 
@@ -63,7 +63,7 @@ export const display = () => {
       trashBtns.forEach((trashBtn, index) => {
         trashBtn.addEventListener('click', () => {
           const indexRem = listData.findIndex(
-            (task) => task.description === inputTexts[index].textContent
+            (task) => task.description === inputTexts[index].textContent,
           );
           listData.splice(indexRem, 1);
           listData.forEach((taskDay, indexDay) => {
@@ -77,3 +77,5 @@ export const display = () => {
     });
   }
 };
+
+export default display;

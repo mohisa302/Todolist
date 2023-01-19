@@ -1,1 +1,2 @@
-export let listData = null || [];
+const listData = null || [];
+export default listData;
