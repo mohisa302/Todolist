@@ -8,7 +8,7 @@ clearCom.addEventListener('click', () => {
     listData = listData.filter((task) => !task.completed);
   }
   listData.forEach((taskDay, indexDay) => {
-    taskDay.index = indexDay;
+    taskDay.index = indexDay+1;
   });
   localStorage.setItem('tasks', JSON.stringify(listData));
   display();

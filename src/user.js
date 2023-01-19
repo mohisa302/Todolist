@@ -11,14 +11,14 @@ const addTask = (task) => {
       {
         description: task,
         completed: false,
-        index: 0,
+        index: 1,
       },
     ];
   } else {
     listData.push({
       description: task,
       completed: false,
-      index: listData.length,
+      index: listData.length+1,
     });
   }
   localStorage.setItem('tasks', JSON.stringify(listData));

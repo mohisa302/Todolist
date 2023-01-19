@@ -66,7 +66,7 @@ const display = () => {
           );
           listData.splice(indexRem, 1);
           listData.forEach((taskDay, indexDay) => {
-            taskDay.index = indexDay;
+            taskDay.index = indexDay+1;
           });
           localStorage.setItem('tasks', JSON.stringify(listData));
           trashBtn.parentNode.parentNode.remove();
