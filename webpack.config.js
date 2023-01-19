@@ -18,4 +18,5 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
   },
+  mode: 'production',
 };
