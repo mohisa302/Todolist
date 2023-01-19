@@ -12,12 +12,12 @@ const listData = [
   {
     description: 'complete to Do list',
     completed: false,
-    index: 0,
+    index: 1,
   },
   {
     description: 'read for exam',
     completed: false,
-    index: 0,
+    index: 2,
   },
 ];
 
@@ -29,5 +29,7 @@ listData.forEach((task, listIndex) => {
   </li>
   <hr class="list-line"/>
   `;
-  if (listIndex === listData.length - 1) form.innerHTML += '<button class="complete-btn">Clear all completed</button>';
+  if (listIndex === listData.length - 1)
+    form.innerHTML +=
+      '<button class="complete-btn">Clear all completed</button>';
 });
