@@ -75,7 +75,6 @@ select:focus {
   width: 80vw;
   margin: 5%;
   flex-direction: column;
-  margin-bottom: 0;
   background-color: white;
   box-shadow: 5px 5px 5px 5px #888;
 }
@@ -84,7 +83,7 @@ select:focus {
   margin: 0;
 }
 
-ul li input[type='checkbox']:checked ~ del {
+input[type='checkbox']:checked ~ del {
   text-decoration: line-through;
 }
 
@@ -136,11 +135,6 @@ ul li input[type='checkbox']:checked ~ del {
   width: 98%;
 }
 
-.edit-icon:after {
-  content: '\2807';
-  font-size: 23px;
-}
-
 .edit-icon {
   display: flex;
   justify-content: flex-end;
@@ -164,10 +158,14 @@ ul li input[type='checkbox']:checked ~ del {
   color: black;
 }
 
-.add-btn {
-  cursor: pointer;
+.edit-icon:after {
+  content: '\2807';
+  font-size: 23px;
 }
 
-.trash-btn {
+.add-btn,
+.complete-btn,
+.trash-btn,
+.refresh {
   cursor: pointer;
 }

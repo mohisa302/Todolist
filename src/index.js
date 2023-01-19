@@ -4,7 +4,8 @@ import './user';
 import { listData } from './tasks';
 
 window.addEventListener('load', () => {
-  listData = JSON.parse(localStorage.getItem('tasks'));
+  if (localStorage.getItem('tasks'))
+    listData = JSON.parse(localStorage.getItem('tasks'));
   display();
 });
 

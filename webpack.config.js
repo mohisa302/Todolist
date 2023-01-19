@@ -1,27 +1,26 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin'); // eslint-disable-line import/no-unresolved
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   module: {
-    entry: './src/index.js',
-    devtool: 'inline-source-map',
-    devServer: {
-      static: './dist',
-    },
     rules: [
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
     ],
   },
-  plugins: [new HtmlWebpackPlugin({ template: './src/index.html' })],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src', 'index.html'),
+    }),
+  ],
   devServer: {
     historyApiFallback: true,
-  },
-  output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
   },
   mode: 'production',
 };

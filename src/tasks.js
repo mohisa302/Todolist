@@ -1,1 +1,1 @@
-export let listData = [];
+export let listData = null || [];
