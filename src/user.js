@@ -1,4 +1,3 @@
-import { listData } from './tasks.js';
 import display from './ui.js';
 
 const refreshIcon = document.querySelector('.refresh');
@@ -7,6 +6,7 @@ const newTask = document.querySelector('.list-input');
 const clearCom = document.querySelector('.complete-btn');
 
 const addTask = (task) => {
+  let listData = JSON.parse(localStorage.getItem('tasks')) || [];
   if (!listData) {
     listData = [
       {
@@ -23,6 +23,7 @@ const addTask = (task) => {
     });
   }
   localStorage.setItem('tasks', JSON.stringify(listData));
+  display();
 };
 
 addBtn.addEventListener('click', () => {
@@ -32,12 +33,13 @@ addBtn.addEventListener('click', () => {
 });
 
 refreshIcon.addEventListener('click', () => {
-  listData = [];
+  const listData = [];
   localStorage.setItem('tasks', JSON.stringify(listData));
   display();
 });
 
 clearCom.addEventListener('click', () => {
+  let listData = JSON.parse(localStorage.getItem('tasks')) || [];
   if (listData) {
     listData = listData.filter((task) => !task.completed);
   }
@@ -46,4 +48,10 @@ clearCom.addEventListener('click', () => {
   });
   localStorage.setItem('tasks', JSON.stringify(listData));
   display();
+});
+
+window.addEventListener('load', () => {
+  if (localStorage.getItem('tasks')) {
+    display();
+  }
 });

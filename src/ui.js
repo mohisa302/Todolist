@@ -1,6 +1,5 @@
-import { listData } from './tasks.js';
-
 const display = () => {
+  const listData = JSON.parse(localStorage.getItem('tasks')) || [];
   const list = document.querySelector('.list-container');
   list.innerHTML = '';
   if (listData.length > 0) {
@@ -77,5 +76,4 @@ const display = () => {
     });
   }
 };
-
 export default display;
