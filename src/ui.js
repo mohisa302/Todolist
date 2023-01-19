@@ -1,3 +1,4 @@
+import { indexOf } from 'lodash';
 import { listData } from './tasks';
 
 export const display = () => {
@@ -9,7 +10,7 @@ export const display = () => {
     <li class="task-container edit-mode">
     <div class="task">
     <div class="task-text">
-    <input type="checkbox"  disabled="disabled" id="${index}" class="check-box" contenteditable name="task"/><del class="input-text" contenteditable="false">${description}</del>
+    <input type="checkbox" id="${index}" class="check-box" contenteditable name="task"/><del class="input-text" contenteditable="false">${description}</del>
     </div>
     <div class="edit-icon"></div>
     <i class="trash trash-btn fa fa-trash" aria-hidden="true"></i>
@@ -19,7 +20,7 @@ export const display = () => {
     `;
     const inputTexts = document.querySelectorAll('.input-text');
     const editBtns = document.querySelectorAll('.edit-icon');
-    const trashBtns = document.querySelectorAll('.trash-btn');
+    let trashBtns = document.querySelectorAll('.trash-btn');
 
     editBtns.forEach((editBtn, index) => {
       editBtn.addEventListener('click', () => {
@@ -43,14 +44,14 @@ export const display = () => {
 
     trashBtns.forEach((trashBtn, index) => {
       trashBtn.addEventListener('click', () => {
-        trashBtn.parentNode.parentNode.remove();
-        listData.splice(index, 1);
-        if (index === 0) localStorage.setItem('tasks', JSON.stringify([]));
+        const indexRem = listData.findIndex(
+          (task) => task.description === inputTexts[index].textContent
+        );
+        listData.splice(indexRem, 1);
         localStorage.setItem('tasks', JSON.stringify(listData));
-        console.log(listData, index);
-        console.log(JSON.parse(localStorage.getItem('tasks')));
-        const trashBtns = document.querySelectorAll('.trash-btn');
+        trashBtn.parentNode.parentNode.remove();
       });
+      trashBtns = document.querySelectorAll('.trash-btn');
     });
   });
 };
