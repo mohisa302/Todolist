@@ -121,6 +121,14 @@ You can deploy this project by:
 - Twitter: [@Kholochelam](https://twitter.com/Kholochelam)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/mohadese-sadeghi-692551199/)
 
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **[will improve page elements]**
+- [ ] **[will improve styles]**
+- [ ] **[will improve js functionality]**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
