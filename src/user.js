@@ -3,7 +3,6 @@ import display from './ui.js';
 const refreshIcon = document.querySelector('.refresh');
 const addBtn = document.querySelector('.add-btn');
 const newTask = document.querySelector('.list-input');
-const clearCom = document.querySelector('.complete-btn');
 
 const addTask = (task) => {
   let listData = JSON.parse(localStorage.getItem('tasks')) || [];
@@ -34,18 +33,6 @@ addBtn.addEventListener('click', () => {
 
 refreshIcon.addEventListener('click', () => {
   const listData = [];
-  localStorage.setItem('tasks', JSON.stringify(listData));
-  display();
-});
-
-clearCom.addEventListener('click', () => {
-  let listData = JSON.parse(localStorage.getItem('tasks')) || [];
-  if (listData) {
-    listData = listData.filter((task) => !task.completed);
-  }
-  listData.forEach((taskDay, indexDay) => {
-    taskDay.index = indexDay;
-  });
   localStorage.setItem('tasks', JSON.stringify(listData));
   display();
 });
