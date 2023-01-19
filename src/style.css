@@ -58,22 +58,42 @@ select:focus {
   width: 80vw;
   flex-direction: column;
   background-color: white;
+  box-shadow: 5px 5px 5px 5px #888888;
 }
 
 .form-container > * {
   margin: 2%;
+  margin-bottom: 0;
 }
 
 ul li input[type='checkbox']:checked ~ del {
   text-decoration: line-through;
 }
 
-li > .form-container {
-  display: flex;
-  justify-content: center;
+.task {
+  margin-top: 2%;
 }
 
 .check-box {
   margin-right: 1%;
   padding-top: 1%;
+}
+
+.form-container > .complete-btn {
+  margin: 0;
+}
+
+.complete-btn {
+  border: none;
+  height: 8vh;
+  background-color: rgb(224, 220, 212);
+  color: #888888;
+}
+
+.list-container > .ul {
+  margin: 0;
+}
+
+hr {
+  margin-bottom: 0;
 }
