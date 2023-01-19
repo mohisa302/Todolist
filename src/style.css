@@ -53,9 +53,9 @@ select:focus {
 }
 
 .form-container {
-  margin: 10%;
   display: flex;
   width: 80vw;
+  margin: 5%;
   flex-direction: column;
   background-color: white;
   box-shadow: 5px 5px 5px 5px #888;
@@ -79,19 +79,11 @@ ul li input[type='checkbox']:checked ~ del {
   padding-top: 1%;
 }
 
-.form-container:last-child {
-  margin: 0;
-}
-
 .complete-btn {
   border: none;
   height: 8vh;
   background-color: rgb(224, 220, 212);
   color: #888;
-  margin: 0;
-}
-
-.list-container > .ul {
   margin: 0;
 }
 
