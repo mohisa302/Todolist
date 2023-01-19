@@ -29,7 +29,8 @@ listData.forEach((task, listIndex) => {
   </li>
   <hr class="list-line"/>
   `;
-  if (listIndex === listData.length - 1)
-    form.innerHTML +=
-      '<button class="complete-btn">Clear all completed</button>';
+  if (listIndex === listData.length - 1) {
+    form.innerHTML
+      += '<button class="complete-btn">Clear all completed</button>';
+  }
 });
