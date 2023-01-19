@@ -1,25 +1,8 @@
 import './style.css';
+import { listData } from './tasks';
 
 const list = document.querySelector('.list-container');
 const form = document.querySelector('.form-container');
-
-const listData = [
-  {
-    description: 'wash the dishes',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'complete to Do list',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'read for exam',
-    completed: false,
-    index: 0,
-  },
-];
 
 listData.forEach((task, listIndex) => {
   const { description, index } = task;
@@ -29,5 +12,7 @@ listData.forEach((task, listIndex) => {
   </li>
   <hr class="list-line"/>
   `;
-  if (listIndex === listData.length - 1) form.innerHTML += '<button class="complete-btn">Clear all completed</button>';
+  if (listIndex === listData.length - 1)
+    form.innerHTML +=
+      '<button class="complete-btn">Clear all completed</button>';
 });
