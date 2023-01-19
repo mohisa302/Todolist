@@ -49,6 +49,7 @@ select:focus {
 
 .list-input {
   border: none;
+  padding: 0;
 }
 
 .form-container {
