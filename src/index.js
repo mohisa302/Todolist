@@ -19,8 +19,8 @@ const listData = [
   },
 ];
 
-listData.forEach((task, listIndex) => {
-  const { description, completed, index } = task;
+listData.forEach((task) => {
+  const { description, index } = task;
   list.innerHTML += `
   <li class="task">
   <input type="checkbox" id="${index}" name="task"/><del>${description}</del>

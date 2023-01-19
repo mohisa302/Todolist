@@ -46,7 +46,6 @@ select:focus {
   margin: 10%;
   display: flex;
   width: 80vw;
-
   flex-direction: column;
   background-color: white;
 }
