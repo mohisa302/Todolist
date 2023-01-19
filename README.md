@@ -2,7 +2,7 @@
 
 <div>
 
-  <h1><b>Awesome Books</b></h1><br/><br/>
+  <h1><b>To do list</b></h1><br/><br/>
 
 </div>
 
@@ -26,7 +26,7 @@
 
 # 📖 Awesome Books <a name="about-project"></a>
 
-**Awesome Books** is a simple website that displays a list of books and allows you to add and remove books from that list.
+**Awesome Books** is a simple website that displays a list of task to do.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -43,21 +43,21 @@
 
 - **Add and remove books**
 
-  - The website that displays a list of books and allows you to add and remove books from that list.
+  - The website that displays a list of tasks and allows you to add and remove task from that list.
 
 - **JavaScript Classes**
 
-  - The books are managed and manipulated using classes and helper functions within those classes.
+  - The tasks are managed and manipulated using classes and helper functions within those classes.
 
 - **Store and retrieve data**
 
-  - The displayed books are stored and retrieved from the local storage of the browser.
+  - The displayed tasks are stored and retrieved from the local storage of the browser.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- Visit the live demo [here](https://mohisa302.github.io/Awesome-books/)
+- Visit the live demo [here]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -91,7 +91,7 @@ To clone this repository to your desired folder, follow the steps below:
 
 - Follow the steps below
 
-  - Visit this link "https://github.com/mohisa302/Awesome-books.git"
+  - Visit this link "https://github.com/mohisa302/Webpack-Exercise.git"
   - Click the green button labelled "code"
   - Select the "Open with GitHub Desktop" option
   - After the GitHub Desktop add opens, click the "clone repo" button
@@ -115,12 +115,6 @@ You can deploy this project by:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Miles Mosweu**
-
-- GitHub: [@Timbar09](https://github.com/Timbar09)
-- Twitter: [@Milez09](https://twitter.com/Milez09)
-- LinkedIn: [@miles-mosweu09](https://www.linkedin.com/in/miles-mosweu09)
-
 👤 **Mohi**
 
 - GitHub: [@mohisa302](https://github.com/mohisa302)
@@ -130,8 +124,6 @@ You can deploy this project by:
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](https://github.com/Timbar09/Africas-Leading-Tech-Conference/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
