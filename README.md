@@ -25,9 +25,9 @@
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 
-# 📖 Awesome Books <a name="about-project"></a>
+# 📖 To do list <a name="about-project"></a>
 
-**Awesome Books** is a simple website that displays a list of task to do.
+**To do list** is a simple website that displays a list of task to do.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -42,7 +42,7 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Add and remove books**
+- **Add and remove tasks**
 
   - The website that displays a list of tasks and allows you to add and remove task from that list.
 
@@ -58,7 +58,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- Visit the live demo [here]
+- Visit the live demo [here](https://mohisa302.github.io/Todolist/dist/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -85,14 +85,14 @@ To clone this repository to your desired folder, follow the steps below:
 
 ```sh
   cd my-folder
-  git clone https://github.com/Timbar09/Awesome-Books.git
+  git clone https://github.com/mohisa302/Todolist.git
 ```
 
 **Using GitHub Desktop app**
 
 - Follow the steps below
 
-  - Visit this link "https://github.com/mohisa302/Webpack-Exercise.git"
+  - Visit this link "https://github.com/mohisa302/Todolist.git"
   - Click the green button labelled "code"
   - Select the "Open with GitHub Desktop" option
   - After the GitHub Desktop add opens, click the "clone repo" button
@@ -138,13 +138,13 @@ Contributions, issues, and feature requests are welcome!
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project, give it a ⭐️ and let us know what you like in particular.
+If you like this project, give it a ⭐️ and let me know what you like in particular.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-We would like to thank the whole Microverse community for their help and contributions towards this project.
+I would like to thank the whole Microverse community for their help and contributions towards this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
