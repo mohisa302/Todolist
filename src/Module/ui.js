@@ -1,5 +1,5 @@
-import { saveStorage, loadStorage } from './storage.js';
-const display = (listData) => {
+const display = () => {
+  const listData = JSON.parse(localStorage.getItem('tasks')) || [];
   const list = document.querySelector('.list-container');
   list.innerHTML = '';
   if (listData.length > 0) {
@@ -30,7 +30,7 @@ const display = (listData) => {
           trashBtns[index].classList.remove('trash');
           inputTexts[index].contentEditable = 'true';
           inputTexts[index].setAttribute('contenteditable', 'true');
-          saveStorage(listData);
+          localStorage.setItem('tasks', JSON.stringify(listData));
         });
       });
 
@@ -39,9 +39,9 @@ const display = (listData) => {
           'input',
           () => {
             listData[index].description = inputText.textContent;
-            saveStorage(listData);
+            localStorage.setItem('tasks', JSON.stringify(listData));
           },
-          false
+          false,
         );
       });
 
@@ -55,20 +55,20 @@ const display = (listData) => {
           listData[index].completed = true;
           inputTexts[index].disabled = true;
           inputTexts[index].previousElementSibling.disabled = true;
-          saveStorage(listData);
+          localStorage.setItem('tasks', JSON.stringify(listData));
         });
       });
 
       trashBtns.forEach((trashBtn, index) => {
         trashBtn.addEventListener('click', () => {
           const indexRem = listData.findIndex(
-            (task) => task.description === inputTexts[index].textContent
+            (task) => task.description === inputTexts[index].textContent,
           );
           listData.splice(indexRem, 1);
           listData.forEach((taskDay, indexDay) => {
             taskDay.index = indexDay + 1;
           });
-          saveStorage(listData);
+          localStorage.setItem('tasks', JSON.stringify(listData));
           trashBtn.parentNode.parentNode.remove();
         });
         trashBtns = document.querySelectorAll('.trash-btn');

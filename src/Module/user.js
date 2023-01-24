@@ -1,29 +1,44 @@
 import display from './ui.js';
-import addTask from './edit.js';
-import { saveStorage, loadStorage } from './storage.js';
 
 const refreshIcon = document.querySelector('.refresh');
 const addBtn = document.querySelector('.add-btn');
 const newTask = document.querySelector('.list-input');
 
-addBtn.addEventListener('click', () => {
-  if (newTask.value) {
-    saveStorage(addTask(newTask.value, loadStorage()));
-    display(loadStorage());
+const addTask = (task) => {
+  let listData = JSON.parse(localStorage.getItem('tasks')) || [];
+  if (!listData) {
+    listData = [
+      {
+        description: task,
+        completed: false,
+        index: 1,
+      },
+    ];
+  } else {
+    listData.push({
+      description: task,
+      completed: false,
+      index: listData.length + 1,
+    });
   }
+  localStorage.setItem('tasks', JSON.stringify(listData));
+  display();
+};
 
+addBtn.addEventListener('click', () => {
+  if (newTask.value) addTask(newTask.value);
   newTask.value = '';
-  display(loadStorage());
+  display();
 });
 
 refreshIcon.addEventListener('click', () => {
   const listData = [];
-  saveStorage(listData);
-  display(loadStorage());
+  localStorage.setItem('tasks', JSON.stringify(listData));
+  display();
 });
 
 window.addEventListener('load', () => {
-  if (loadStorage()) {
-    display(loadStorage());
+  if (localStorage.getItem('tasks')) {
+    display();
   }
 });
