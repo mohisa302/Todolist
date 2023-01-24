@@ -1,15 +1,16 @@
 import display from './ui.js';
+import { saveData, loadData } from './storage.js';
 
 const clearCom = document.querySelector('.complete-btn');
 
 clearCom.addEventListener('click', () => {
-  let listData = JSON.parse(localStorage.getItem('tasks')) || [];
+  let listData = loadData();
   if (listData) {
     listData = listData.filter((task) => !task.completed);
   }
   listData.forEach((taskDay, indexDay) => {
     taskDay.index = indexDay + 1;
   });
-  localStorage.setItem('tasks', JSON.stringify(listData));
-  display();
+  saveData(listData);
+  display(loadData());
 });

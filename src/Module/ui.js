@@ -1,15 +1,16 @@
-const display = () => {
-  const listData = JSON.parse(localStorage.getItem('tasks')) || [];
-  const list = document.querySelector('.list-container');
+import { saveData } from './storage';
+
+const list = document.querySelector('.list-container');
+const display = (listData) => {
   list.innerHTML = '';
   if (listData.length > 0) {
     listData.forEach((task) => {
       const { description, index } = task;
       list.innerHTML += `
-    <li class="task-container">
+    <li class="task-container" id="${index}">
     <div class="task">
     <div class="task-text">
-    <input type="checkbox" id="${index}" class="check-box" name="task"/><del class="input-text" contenteditable="false">${description}</del>
+    <input type="checkbox" class="check-box" name="task"/><del class="input-text" contenteditable="false">${description}</del>
     </div>
     <div class="edit-icon "></div>
     <i class="trash trash-btn fa fa-trash" aria-hidden="true"></i>
@@ -30,7 +31,7 @@ const display = () => {
           trashBtns[index].classList.remove('trash');
           inputTexts[index].contentEditable = 'true';
           inputTexts[index].setAttribute('contenteditable', 'true');
-          localStorage.setItem('tasks', JSON.stringify(listData));
+          saveData(listData);
         });
       });
 
@@ -39,9 +40,9 @@ const display = () => {
           'input',
           () => {
             listData[index].description = inputText.textContent;
-            localStorage.setItem('tasks', JSON.stringify(listData));
+            saveData(listData);
           },
-          false,
+          false
         );
       });
 
@@ -55,25 +56,26 @@ const display = () => {
           listData[index].completed = true;
           inputTexts[index].disabled = true;
           inputTexts[index].previousElementSibling.disabled = true;
-          localStorage.setItem('tasks', JSON.stringify(listData));
+          saveData(listData);
         });
       });
 
-      trashBtns.forEach((trashBtn, index) => {
-        trashBtn.addEventListener('click', () => {
-          const indexRem = listData.findIndex(
-            (task) => task.description === inputTexts[index].textContent,
-          );
-          listData.splice(indexRem, 1);
-          listData.forEach((taskDay, indexDay) => {
-            taskDay.index = indexDay + 1;
-          });
-          localStorage.setItem('tasks', JSON.stringify(listData));
-          trashBtn.parentNode.parentNode.remove();
-        });
-        trashBtns = document.querySelectorAll('.trash-btn');
-      });
+      // trashBtns.forEach((trashBtn, index) => {
+      //   trashBtn.addEventListener('click', () => {
+      //     // const indexRem = listData.findIndex(
+      //     //   (task) => task.description === inputTexts[index].textContent
+      //     // );
+      //     // listData.splice(indexRem, 1);
+      //     // listData.forEach((taskDay, indexDay) => {
+      //     //   taskDay.index = indexDay + 1;
+      //     // });
+      //     // saveData(listData);
+      //     // trashBtn.parentNode.parentNode.remove();
+      //   });
+      //   trashBtns = document.querySelectorAll('.trash-btn');
+      // });
     });
   }
 };
+
 export default display;
