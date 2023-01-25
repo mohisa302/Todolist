@@ -1,4 +1,4 @@
-import { saveData } from './storage.js';
+import { loadData, saveData } from './storage.js';
 
 export const addTaskElement = (description, list) => {
   list.innerHTML += `
@@ -63,21 +63,32 @@ export const display = (listData) => {
           saveData(listData);
         });
       });
-
-      // trashBtns.forEach((trashBtn, index) => {
-      //   trashBtn.addEventListener('click', () => {
-      //     // const indexRem = listData.findIndex(
-      //     //   (task) => task.description === inputTexts[index].textContent
-      //     // );
-      //     // listData.splice(indexRem, 1);
-      //     // listData.forEach((taskDay, indexDay) => {
-      //     //   taskDay.index = indexDay + 1;
-      //     // });
-      //     // saveData(listData);
-      //     // trashBtn.parentNode.parentNode.remove();
-      //   });
-      //   trashBtns = document.querySelectorAll('.trash-btn');
-      // });
     });
   }
+};
+
+export const drag = (e, list) => {
+  const underDrag = e.target.closest('.task-container');
+  const draggable = document.querySelector('.dragging');
+  if (underDrag.nextElementSibling === null) {
+    underDrag.parentNode.insertBefore(draggable, underDrag.nextSibling);
+    list.appendChild(draggable);
+  } else {
+    underDrag.parentNode.insertBefore(draggable, underDrag);
+  }
+  const allTask = document.querySelectorAll('.input-text');
+  console.log(allTask);
+  return dataRef(allTask);
+};
+
+const dataRef = (tasks) => {
+  let listData = [];
+  tasks.forEach((task, index) => {
+    listData.push({
+      description: task.textContent,
+      completed: task.parentNode.checked,
+      index: index + 1,
+    });
+  });
+  return listData;
 };

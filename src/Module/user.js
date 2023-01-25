@@ -1,4 +1,4 @@
-import { display } from './ui.js';
+import { display, drag } from './ui.js';
 import { loadData, saveData } from './storage.js';
 import { addTask, removeTask } from './edit.js';
 
@@ -35,16 +35,7 @@ list.addEventListener('dragend', (e) => {
 
 list.addEventListener('dragover', (e) => {
   e.preventDefault();
-  const underDrag = e.target.closest('.task-container');
-  const allTask = document.querySelectorAll('draggable:not(.dragging');
-  const draggable = document.querySelector('.dragging');
-  if (underDrag.nextElementSibling === null) {
-    underDrag.parentNode.insertBefore(draggable, underDrag.nextSibling);
-    list.appendChild(draggable);
-  } else {
-    underDrag.parentNode.insertBefore(draggable, underDrag);
-  }
-  // console.log(draggable);
+  saveData(drag(e, list));
 });
 
 refreshIcon.addEventListener('click', () => {
