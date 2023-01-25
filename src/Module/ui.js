@@ -39,17 +39,6 @@ export const display = (listData) => {
         });
       });
 
-      inputTexts.forEach((inputText, index) => {
-        inputText.addEventListener(
-          'input',
-          () => {
-            listData[index].description = inputText.textContent;
-            saveData(listData);
-          },
-          false
-        );
-      });
-
       checkBoxes.forEach((checkBox, index) => {
         if (listData[index].completed === true) {
           checkBox.checked = true;

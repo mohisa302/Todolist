@@ -1,7 +1,7 @@
 import { display, drag } from './ui.js';
 import { loadData, saveData } from './storage.js';
 import { addTask, removeTask } from './edit.js';
-
+import { editText } from './update.js';
 const refreshIcon = document.querySelector('.refresh');
 const addBtn = document.querySelector('.add-btn');
 const newTask = document.querySelector('.list-input');
@@ -16,10 +16,24 @@ addBtn.addEventListener('click', () => {
 });
 
 list.addEventListener('click', (e) => {
+  //trash icon
   if (e.target.closest('.trash-btn')) {
     const trashIcon = e.target.closest('.trash-btn');
     saveData(removeTask(trashIcon, loadData()));
     display(loadData());
+  }
+  //edit description
+  if (e.target.closest('.input-text')) {
+    const inputText = e.target.closest('.input-text');
+    inputText.addEventListener(
+      'input',
+      (e) => {
+        const parent = document.querySelector('.list-container');
+        const child = e.target.closest('.task-container');
+        saveData(editText(loadData(), parent, child, inputText.textContent));
+      },
+      false
+    );
   }
 });
 
