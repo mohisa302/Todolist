@@ -7,6 +7,8 @@ import { addTaskElement } from './ui.js';
 
 let listData = [];
 describe('test addTaskItem and LocalStorage', () => {
+  //             *********** Test 1-6 ***********
+  //                Add and Remove functionality
   test('add task to show arrTask.tasks length 1', () => {
     listData = addTask('wash the dishes', loadData());
     expect(listData).toHaveLength(1);
@@ -60,4 +62,6 @@ describe('test addTaskItem and LocalStorage', () => {
     const li = document.querySelectorAll('.task-container');
     expect(li).toHaveLength(0);
   });
+  //             *********** Test 6-6 ***********
+  //                       Data updatation
 });

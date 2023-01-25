@@ -1,4 +1,4 @@
-import { loadData, saveData } from './storage.js';
+import { saveData } from './storage.js';
 
 export const addTaskElement = (description, list) => {
   list.innerHTML += `
@@ -27,7 +27,6 @@ export const display = (listData) => {
       const editBtns = document.querySelectorAll('.edit-icon');
       const trashBtns = document.querySelectorAll('.trash-btn');
       const checkBoxes = document.querySelectorAll('input[type=checkbox]');
-
       editBtns.forEach((editBtn, index) => {
         editBtn.addEventListener('click', () => {
           editBtn.classList.add('hide');
@@ -38,27 +37,18 @@ export const display = (listData) => {
           saveData(listData);
         });
       });
-
+      //update checkboxes aftre reload from database
       checkBoxes.forEach((checkBox, index) => {
         if (listData[index].completed === true) {
           checkBox.checked = true;
           inputTexts[index].previousElementSibling.disabled = true;
         }
       });
-
-      //   checkBox.addEventListener('change', () => {
-      //     listData[index].completed = true;
-      //     inputTexts[index].disabled = true;
-      //     inputTexts[index].previousElementSibling.disabled = true;
-      //     saveData(listData);
-      //   });
-      // });
     });
   }
 };
 
-export const drag = (e, list) => {
-  const underDrag = e.target.closest('.task-container');
+export const drag = (underDrag, list) => {
   const draggable = document.querySelector('.dragging');
   if (underDrag.nextElementSibling === null) {
     underDrag.parentNode.insertBefore(draggable, underDrag.nextSibling);
@@ -67,16 +57,16 @@ export const drag = (e, list) => {
     underDrag.parentNode.insertBefore(draggable, underDrag);
   }
   const allTask = document.querySelectorAll('.input-text');
-  console.log(allTask);
   return dataRef(allTask);
 };
 
 const dataRef = (tasks) => {
   let listData = [];
   tasks.forEach((task, index) => {
+    const checkBox = task.previousElementSibling;
     listData.push({
       description: task.textContent,
-      completed: task.parentNode.checked,
+      completed: checkBox.checked,
       index: index + 1,
     });
   });
