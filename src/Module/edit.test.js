@@ -5,7 +5,6 @@ import { addTask, removeTask } from './edit.js';
 import { saveData, loadData } from './storage.js';
 import { addTaskElement, drag } from './ui.js';
 import { clearAll, editText, statusTask } from './update.js';
-import { addTaskElement } from './ui.js';
 
 let listData = [];
 describe('test addTaskItem and LocalStorage', () => {
