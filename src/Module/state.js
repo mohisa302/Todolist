@@ -1,4 +1,4 @@
-import display from './ui.js';
+import { display } from './ui.js';
 import { saveData, loadData } from './storage.js';
 
 const clearCom = document.querySelector('.complete-btn');

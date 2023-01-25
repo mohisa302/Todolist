@@ -1,4 +1,4 @@
-import display from './ui.js';
+import { display } from './ui.js';
 import { loadData, saveData } from './storage.js';
 import { addTask, removeTask } from './edit.js';
 
@@ -17,7 +17,8 @@ addBtn.addEventListener('click', () => {
 
 list.addEventListener('click', (trashBtn) => {
   if (trashBtn.target.closest('.trash-btn')) {
-    saveData(removeTask(trashBtn, loadData()));
+    const trashIcon = trashBtn.target.closest('.trash-btn');
+    saveData(removeTask(trashIcon, loadData()));
     display(loadData());
   }
 });

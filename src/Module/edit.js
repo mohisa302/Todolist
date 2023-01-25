@@ -1,5 +1,3 @@
-import display from './ui.js';
-import { loadData, saveData } from './storage.js';
 export const addTask = (task, listData) => {
   if (!listData) {
     listData = [
@@ -19,8 +17,7 @@ export const addTask = (task, listData) => {
   return listData;
 };
 
-export const removeTask = (trashBtn, listData) => {
-  const trashIcon = trashBtn.target.closest('.trash-btn');
+export const removeTask = (trashIcon, listData) => {
   const inputText =
     trashIcon.previousElementSibling.previousElementSibling.firstElementChild
       .nextElementSibling.textContent;

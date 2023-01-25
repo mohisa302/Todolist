@@ -1,23 +1,28 @@
 import { saveData } from './storage';
 
-const list = document.querySelector('.list-container');
-const display = (listData) => {
+export const addTaskElement = (description, list) => {
+  list.innerHTML += `
+  <li class="task-container">
+  <div class="task">
+  <div class="task-text">
+  <input type="checkbox" class="check-box" name="task"/><del class="input-text" contenteditable="false">${description}</del>
+  </div>
+  <div class="edit-icon "></div>
+  <i class="trash trash-btn fa fa-trash" aria-hidden="true"></i>
+  </div>
+  <hr class="list-line" />
+  </li>
+  `;
+  return;
+};
+
+export const display = (listData) => {
+  let list = document.querySelector('.list-container');
   list.innerHTML = '';
   if (listData.length > 0) {
     listData.forEach((task) => {
       const { description, index } = task;
-      list.innerHTML += `
-    <li class="task-container" id="${index}">
-    <div class="task">
-    <div class="task-text">
-    <input type="checkbox" class="check-box" name="task"/><del class="input-text" contenteditable="false">${description}</del>
-    </div>
-    <div class="edit-icon "></div>
-    <i class="trash trash-btn fa fa-trash" aria-hidden="true"></i>
-    </div>
-    <hr class="list-line" />
-    </li>
-    `;
+      addTaskElement(description, list);
       const tasks = document.querySelectorAll('.task-container');
       const inputTexts = document.querySelectorAll('.input-text');
       const editBtns = document.querySelectorAll('.edit-icon');
@@ -77,5 +82,3 @@ const display = (listData) => {
     });
   }
 };
-
-export default display;

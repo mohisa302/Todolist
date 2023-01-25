@@ -1,5 +1,5 @@
 import './style.css';
-import display from './Module/ui.js';
+import { display } from './Module/ui.js';
 import './Module/user.js';
 import './Module/state.js';
 
