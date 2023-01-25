@@ -7,12 +7,14 @@ export const clearAll = (listData) => {
   });
   return listData;
 };
+
 //edit description
 export const editText = (listData, listElm, taskElm, text) => {
   const index = Array.prototype.indexOf.call(listElm.children, taskElm);
   listData[index].description = text;
   return listData;
 };
+
 //checkbox update
 export const statusTask = (listData, listElm, taskElm) => {
   const index = Array.prototype.indexOf.call(listElm.children, taskElm);

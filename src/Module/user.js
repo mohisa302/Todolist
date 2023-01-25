@@ -7,7 +7,7 @@ const refreshIcon = document.querySelector('.refresh');
 const addBtn = document.querySelector('.add-btn');
 const newTask = document.querySelector('.list-input');
 const list = document.querySelector('.list-container');
-const checkBoxes = document.querySelectorAll('input[type=checkbox]');
+const clearCom = document.querySelector('.complete-btn');
 
 addBtn.addEventListener('click', () => {
   if (newTask.value) {
@@ -68,8 +68,6 @@ refreshIcon.addEventListener('click', () => {
   saveData([]);
   display(loadData());
 });
-
-const clearCom = document.querySelector('.complete-btn');
 
 clearCom.addEventListener('click', () => {
   saveData(clearAll(loadData()));
