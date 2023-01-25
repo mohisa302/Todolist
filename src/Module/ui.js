@@ -64,21 +64,6 @@ export const display = (listData) => {
           saveData(listData);
         });
       });
-
-      // trashBtns.forEach((trashBtn, index) => {
-      //   trashBtn.addEventListener('click', () => {
-      //     // const indexRem = listData.findIndex(
-      //     //   (task) => task.description === inputTexts[index].textContent
-      //     // );
-      //     // listData.splice(indexRem, 1);
-      //     // listData.forEach((taskDay, indexDay) => {
-      //     //   taskDay.index = indexDay + 1;
-      //     // });
-      //     // saveData(listData);
-      //     // trashBtn.parentNode.parentNode.remove();
-      //   });
-      //   trashBtns = document.querySelectorAll('.trash-btn');
-      // });
     });
   }
 };
