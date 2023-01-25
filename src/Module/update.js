@@ -14,4 +14,11 @@ export const editText = (listData, listElm, taskElm, text) => {
   return listData;
 };
 
-export const status = () => {};
+export const statusTask = (listData, listElm, taskElm) => {
+  const index = Array.prototype.indexOf.call(listElm.children, taskElm);
+  let inputText = taskElm.querySelector('.input-text');
+  listData[index].completed = true;
+  inputText.disabled = true;
+  inputText.previousElementSibling.disabled = true;
+  return listData;
+};

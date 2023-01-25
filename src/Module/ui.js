@@ -44,14 +44,15 @@ export const display = (listData) => {
           checkBox.checked = true;
           inputTexts[index].previousElementSibling.disabled = true;
         }
-
-        checkBox.addEventListener('change', () => {
-          listData[index].completed = true;
-          inputTexts[index].disabled = true;
-          inputTexts[index].previousElementSibling.disabled = true;
-          saveData(listData);
-        });
       });
+
+      //   checkBox.addEventListener('change', () => {
+      //     listData[index].completed = true;
+      //     inputTexts[index].disabled = true;
+      //     inputTexts[index].previousElementSibling.disabled = true;
+      //     saveData(listData);
+      //   });
+      // });
     });
   }
 };

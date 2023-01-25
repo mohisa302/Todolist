@@ -1,11 +1,12 @@
 import { display, drag } from './ui.js';
 import { loadData, saveData } from './storage.js';
 import { addTask, removeTask } from './edit.js';
-import { editText } from './update.js';
+import { editText, statusTask } from './update.js';
 const refreshIcon = document.querySelector('.refresh');
 const addBtn = document.querySelector('.add-btn');
 const newTask = document.querySelector('.list-input');
 const list = document.querySelector('.list-container');
+const checkBoxes = document.querySelectorAll('input[type=checkbox]');
 
 addBtn.addEventListener('click', () => {
   if (newTask.value) {
@@ -34,6 +35,15 @@ list.addEventListener('click', (e) => {
       },
       false
     );
+  }
+
+  if (e.target.closest('.check-box')) {
+    const checkBox = e.target.closest('input[type=checkbox]');
+    checkBox.addEventListener('change', (e) => {
+      const parent = document.querySelector('.list-container');
+      const child = e.target.closest('.task-container');
+      saveData(statusTask(loadData(), parent, child));
+    });
   }
 });
 
