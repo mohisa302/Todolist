@@ -34,6 +34,8 @@ option {
 /* rest of your styles; like: */
 body {
   font-size: 0.875em;
+  display: flex;
+  flex-direction: column;
 }
 
 .list-title {
@@ -68,6 +70,7 @@ select:focus {
 .list-input {
   border: none;
   padding: 0;
+  width: 100%;
 }
 
 .form-container {
@@ -168,4 +171,23 @@ input[type='checkbox']:checked ~ del {
 .trash-btn,
 .refresh {
   cursor: pointer;
+}
+
+.task-container {
+  cursor: move;
+  user-select: none;
+}
+
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Required to make elements draggable in old WebKit */
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+}
+
+.dragging {
+  opacity: 0.5;
 }

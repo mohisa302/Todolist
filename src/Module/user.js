@@ -15,12 +15,36 @@ addBtn.addEventListener('click', () => {
   }
 });
 
-list.addEventListener('click', (trashBtn) => {
-  if (trashBtn.target.closest('.trash-btn')) {
-    const trashIcon = trashBtn.target.closest('.trash-btn');
+list.addEventListener('click', (e) => {
+  if (e.target.closest('.trash-btn')) {
+    const trashIcon = e.target.closest('.trash-btn');
     saveData(removeTask(trashIcon, loadData()));
     display(loadData());
   }
+});
+
+list.addEventListener('dragstart', (e) => {
+  const listElem = e.target.closest('.task-container');
+  listElem.classList.add('dragging');
+});
+
+list.addEventListener('dragend', (e) => {
+  const listElem = e.target.closest('.task-container');
+  listElem.classList.remove('dragging');
+});
+
+list.addEventListener('dragover', (e) => {
+  e.preventDefault();
+  const underDrag = e.target.closest('.task-container');
+  const allTask = document.querySelectorAll('draggable:not(.dragging');
+  const draggable = document.querySelector('.dragging');
+  if (underDrag.nextElementSibling === null) {
+    underDrag.parentNode.insertBefore(draggable, underDrag.nextSibling);
+    list.appendChild(draggable);
+  } else {
+    underDrag.parentNode.insertBefore(draggable, underDrag);
+  }
+  // console.log(draggable);
 });
 
 refreshIcon.addEventListener('click', () => {

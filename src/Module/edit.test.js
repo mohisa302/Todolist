@@ -4,6 +4,7 @@
 import { addTask, removeTask } from './edit.js';
 import { saveData, loadData } from './storage.js';
 import { addTaskElement } from './ui.js';
+
 let listData = [];
 describe('test addTaskItem and LocalStorage', () => {
   test('add task to show arrTask.tasks length 1', () => {
@@ -23,8 +24,8 @@ describe('test addTaskItem and LocalStorage', () => {
   test('check localStorage after add task', () => {
     document.body.innerHTML = '<ul class="list-container"></ul>';
     const list = document.querySelector('.list-container');
-    addTask('clean home', loadData()); //add array element
-    addTaskElement('clean home', list); //add html element
+    addTask('clean home', loadData()); // add array element
+    addTaskElement('clean home', list); // add html element
     saveData(listData);
     expect(loadData()).toHaveLength(1);
   });

@@ -18,11 +18,10 @@ export const addTask = (task, listData) => {
 };
 
 export const removeTask = (trashIcon, listData) => {
-  const inputText =
-    trashIcon.previousElementSibling.previousElementSibling.firstElementChild
-      .nextElementSibling.textContent;
+  const inputText = trashIcon.previousElementSibling.previousElementSibling.firstElementChild
+    .nextElementSibling.textContent;
   const taskIndex = listData.findIndex(
-    (task) => task.description === inputText
+    (task) => task.description === inputText,
   );
   listData.splice(taskIndex, 1);
   listData.forEach((taskDay, indexDay) => {
