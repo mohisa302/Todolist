@@ -1,4 +1,4 @@
-import { saveData } from './storage';
+import { saveData } from './storage.js';
 
 export const addTaskElement = (description, list) => {
   list.innerHTML += `
@@ -13,20 +13,19 @@ export const addTaskElement = (description, list) => {
   <hr class="list-line" />
   </li>
   `;
-  return;
 };
 
 export const display = (listData) => {
-  let list = document.querySelector('.list-container');
+  const list = document.querySelector('.list-container');
   list.innerHTML = '';
   if (listData.length > 0) {
     listData.forEach((task) => {
-      const { description, index } = task;
+      const { description } = task;
       addTaskElement(description, list);
       const tasks = document.querySelectorAll('.task-container');
       const inputTexts = document.querySelectorAll('.input-text');
       const editBtns = document.querySelectorAll('.edit-icon');
-      let trashBtns = document.querySelectorAll('.trash-btn');
+      const trashBtns = document.querySelectorAll('.trash-btn');
       const checkBoxes = document.querySelectorAll('input[type=checkbox]');
 
       editBtns.forEach((editBtn, index) => {
@@ -47,7 +46,7 @@ export const display = (listData) => {
             listData[index].description = inputText.textContent;
             saveData(listData);
           },
-          false
+          false,
         );
       });
 
