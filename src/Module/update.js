@@ -8,17 +8,17 @@ export const clearAll = (listData) => {
   return listData;
 };
 
-//edit description
+// edit description
 export const editText = (listData, listElm, taskElm, text) => {
   const index = Array.prototype.indexOf.call(listElm.children, taskElm);
   listData[index].description = text;
   return listData;
 };
 
-//checkbox update
+// checkbox update
 export const statusTask = (listData, listElm, taskElm) => {
   const index = Array.prototype.indexOf.call(listElm.children, taskElm);
-  let inputText = taskElm.querySelector('.input-text');
+  const inputText = taskElm.querySelector('.input-text');
   listData[index].completed = true;
   inputText.disabled = true;
   inputText.previousElementSibling.disabled = true;

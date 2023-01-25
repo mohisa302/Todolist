@@ -37,7 +37,7 @@ export const display = (listData) => {
           saveData(listData);
         });
       });
-      //update checkboxes aftre reload from database
+      // update checkboxes aftre reload from database
       checkBoxes.forEach((checkBox, index) => {
         if (listData[index].completed === true) {
           checkBox.checked = true;
@@ -46,6 +46,19 @@ export const display = (listData) => {
       });
     });
   }
+};
+
+const dataRef = (tasks) => {
+  const listData = [];
+  tasks.forEach((task, index) => {
+    const checkBox = task.previousElementSibling;
+    listData.push({
+      description: task.textContent,
+      completed: checkBox.checked,
+      index: index + 1,
+    });
+  });
+  return listData;
 };
 
 export const drag = (underDrag, list) => {
@@ -58,17 +71,4 @@ export const drag = (underDrag, list) => {
   }
   const allTask = document.querySelectorAll('.input-text');
   return dataRef(allTask);
-};
-
-const dataRef = (tasks) => {
-  let listData = [];
-  tasks.forEach((task, index) => {
-    const checkBox = task.previousElementSibling;
-    listData.push({
-      description: task.textContent,
-      completed: checkBox.checked,
-      index: index + 1,
-    });
-  });
-  return listData;
 };

@@ -106,6 +106,8 @@ input[type='checkbox']:checked ~ del {
   display: flex;
   flex-direction: column;
   width: 100%;
+  cursor: move;
+  user-select: none;
 }
 
 .check-box {
@@ -173,19 +175,11 @@ input[type='checkbox']:checked ~ del {
   cursor: pointer;
 }
 
-.task-container {
-  cursor: move;
-  user-select: none;
-}
-
 [draggable] {
   -moz-user-select: none;
   -khtml-user-select: none;
   -webkit-user-select: none;
   user-select: none;
-  /* Required to make elements draggable in old WebKit */
-  -khtml-user-drag: element;
-  -webkit-user-drag: element;
 }
 
 .dragging {

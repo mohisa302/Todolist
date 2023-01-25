@@ -18,13 +18,13 @@ addBtn.addEventListener('click', () => {
 });
 
 list.addEventListener('click', (e) => {
-  //trash icon
+  // trash icon
   if (e.target.closest('.trash-btn')) {
     const trashIcon = e.target.closest('.trash-btn');
     saveData(removeTask(trashIcon, loadData()));
     display(loadData());
   }
-  //edit description
+  // edit description
   if (e.target.closest('.input-text')) {
     const inputText = e.target.closest('.input-text');
     inputText.addEventListener(
@@ -34,10 +34,10 @@ list.addEventListener('click', (e) => {
         const child = e.target.closest('.task-container');
         saveData(editText(loadData(), parent, child, inputText.textContent));
       },
-      false
+      false,
     );
   }
-  //checkbox update
+  // checkbox update
   if (e.target.closest('.check-box')) {
     const checkBox = e.target.closest('input[type=checkbox]');
     checkBox.addEventListener('change', (e) => {
