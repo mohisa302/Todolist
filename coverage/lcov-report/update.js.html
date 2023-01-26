@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for edit.js</title>
+    <title>Code coverage report for update.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> edit.js</h1>
+        <h1><a href="index.html">All files</a> update.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.85% </span>
+                <span class="strong">94.44% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/14</span>
+                <span class='fraction'>17/18</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>4/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.85% </span>
+                <span class="strong">94.11% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13/14</span>
+                <span class='fraction'>16/17</span>
             </div>
         
             
@@ -89,74 +89,56 @@
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">15x</span>
+<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export const addTask = (task, listData) =&gt; {
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (!listData) {
-<span class="cstat-no" title="statement not covered" >    listData = [</span>
-      {
-        description: task,
-        completed: false,
-        index: 1,
-      },
-    ];
-  } else {
-    listData.push({
-      description: task,
-      completed: false,
-      index: listData.length + 1,
-    });
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export const clearAll = (listData) =&gt; {
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (listData) {
+    listData = listData.filter((task) =&gt; !task.completed);
   }
+  listData.forEach(<span class="fstat-no" title="function not covered" >(t</span>askDay, indexDay) =&gt; {
+<span class="cstat-no" title="statement not covered" >    taskDay.index = indexDay + 1;</span>
+  });
   return listData;
 };
 &nbsp;
-export const removeTask = (trashIcon, listData) =&gt; {
-  const inputText = trashIcon.previousElementSibling.previousElementSibling.firstElementChild
-    .nextElementSibling.textContent;
-  const taskIndex = listData.findIndex(
-    (task) =&gt; task.description === inputText,
-  );
-  listData.splice(taskIndex, 1);
-  listData.forEach((taskDay, indexDay) =&gt; {
-    taskDay.index = indexDay + 1;
-  });
-  trashIcon.parentElement.parentElement.remove();
+// edit description
+export const editText = (listData, listElm, taskElm, text) =&gt; {
+  const index = Array.prototype.indexOf.call(listElm.children, taskElm);
+  listData[index].description = text;
+  return listData;
+};
+&nbsp;
+// checkbox update
+export const statusTask = (listData, listElm, taskElm) =&gt; {
+  const index = Array.prototype.indexOf.call(listElm.children, taskElm);
+  const inputText = taskElm.querySelector('.input-text');
+  listData[index].completed = true;
+  inputText.disabled = true;
+  inputText.previousElementSibling.disabled = true;
   return listData;
 };
 &nbsp;</pre></td></tr></table></pre>

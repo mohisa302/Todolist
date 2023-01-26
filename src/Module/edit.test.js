@@ -140,7 +140,7 @@ describe('test addTaskItem and LocalStorage', () => {
     const child = document.querySelector('.task-container');
     saveData(statusTask(loadData(), list, child));
     saveData(clearAll(loadData()));
-    const li = document.querySelector('.task-container');
+    // const li = document.querySelector('.task-container');
     expect(loadData()).toHaveLength(0);
   });
 
