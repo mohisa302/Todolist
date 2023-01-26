@@ -2,7 +2,7 @@ import { saveData } from './storage.js';
 
 export const addTaskElement = (description, list) => {
   list.innerHTML += `
-  <li class="task-container">
+  <li class="task-container" draggable="true">
   <div class="task">
   <div class="task-text">
   <input type="checkbox" class="check-box" name="task"/><del class="input-text" contenteditable="false">${description}</del>
@@ -27,7 +27,6 @@ export const display = (listData) => {
       const editBtns = document.querySelectorAll('.edit-icon');
       const trashBtns = document.querySelectorAll('.trash-btn');
       const checkBoxes = document.querySelectorAll('input[type=checkbox]');
-
       editBtns.forEach((editBtn, index) => {
         editBtn.addEventListener('click', () => {
           editBtn.classList.add('hide');
@@ -38,31 +37,38 @@ export const display = (listData) => {
           saveData(listData);
         });
       });
-
-      inputTexts.forEach((inputText, index) => {
-        inputText.addEventListener(
-          'input',
-          () => {
-            listData[index].description = inputText.textContent;
-            saveData(listData);
-          },
-          false,
-        );
-      });
-
+      // update checkboxes aftre reload from database
       checkBoxes.forEach((checkBox, index) => {
         if (listData[index].completed === true) {
           checkBox.checked = true;
           inputTexts[index].previousElementSibling.disabled = true;
         }
-
-        checkBox.addEventListener('change', () => {
-          listData[index].completed = true;
-          inputTexts[index].disabled = true;
-          inputTexts[index].previousElementSibling.disabled = true;
-          saveData(listData);
-        });
       });
     });
   }
+};
+
+const dataRef = (tasks) => {
+  const listData = [];
+  tasks.forEach((task, index) => {
+    const checkBox = task.previousElementSibling;
+    listData.push({
+      description: task.textContent,
+      completed: checkBox.checked,
+      index: index + 1,
+    });
+  });
+  return listData;
+};
+
+export const drag = (underDrag, list) => {
+  const draggable = document.querySelector('.dragging');
+  if (underDrag.nextElementSibling === null) {
+    underDrag.parentNode.insertBefore(draggable, underDrag.nextSibling);
+    list.appendChild(draggable);
+  } else {
+    underDrag.parentNode.insertBefore(draggable, underDrag);
+  }
+  const allTask = document.querySelectorAll('.input-text');
+  return dataRef(allTask);
 };
