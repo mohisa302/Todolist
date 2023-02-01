@@ -58,7 +58,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- Visit the live demo [here](https://mohisa302.github.io/Todolist/dist/)
+- Visit the live demo [here](https://mohisa302.github.io/Todolist/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
